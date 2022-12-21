@@ -1,0 +1,351 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Techno LCD";
+  src: url("fonts/Techno LCD.ttf") format("truetype");
+}
+@font-face {
+  font-family: "TT Norms";
+  font-weight: bold;
+  src: url("fonts/TT-Norms-Fonts/TTNorms-Bold.otf");
+}
+@font-face {
+  font-family: "TT Norms";
+  font-weight: 400;
+  src: url("fonts/TT-Norms-Fonts/TTNorms-Light.otf");
+}
+@font-face {
+  font-family: "TT Norms";
+  font-weight: 500;
+  src: url("fonts/TT-Norms-Fonts/TTNorms-Regular.otf");
+}
+@font-face {
+  font-family: "TT Norms";
+  font-weight: 600;
+  src: url("fonts/TT-Norms-Fonts/TTNorms-Medium.otf");
+}
+body {
+  padding: 20px;
+  margin: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: "TT Norms";
+  font-weight: 600;
+}
+body #app-alarm {
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  width: 50%;
+}
+body #app-alarm #clock {
+  font-family: "Techno LCD";
+  text-align: center;
+  font-size: 30px;
+}
+body #app-alarm p {
+  font-size: 22px;
+}
+body #app-alarm #config {
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+body #app-alarm #config #setup {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0.1px solid #e7e7e7;
+  position: relative;
+}
+body #app-alarm #config #setup #sure {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #e7e7e7;
+}
+body #app-alarm #config #setup #sure p {
+  font-size: 15px;
+}
+body #app-alarm #config #setup #sure .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body #app-alarm #config #setup #sure .buttons button {
+  cursor: pointer;
+  width: 120px;
+  height: 32px;
+  border-radius: 3px;
+}
+body #app-alarm #config #setup #sure .buttons button.no {
+  background-color: #cecece;
+  color: #272727;
+}
+body #app-alarm #config #setup #sure .buttons button.yes {
+  background-color: #e24444;
+  color: #fff;
+}
+body #app-alarm #config #setup #header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+body #app-alarm #config #setup #header .setting .vic {
+  padding: 10px;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+  background-image: url("../setting.svg");
+}
+body #app-alarm #config #setup #header .delete {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  padding: 5px;
+}
+body #app-alarm #config #setup #header .delete span {
+  font-size: 13px;
+}
+body #app-alarm #config #setup #header .delete span:hover {
+  background-color: #e24444;
+  color: #fff;
+}
+body #app-alarm #config #setup #header .name input {
+  height: 32px;
+  border: 0;
+}
+body #app-alarm #config #setup #header .name input:focus {
+  outline: 0;
+  border-bottom: 1px solid blue;
+  font-size: 17px;
+  font-weight: bold;
+}
+body #app-alarm #config #setup #header .close .vic {
+  padding: 10px;
+  background-image: url("../close.svg");
+}
+body #app-alarm #config #setup .calander {
+  position: absolute;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body #app-alarm #config #setup .calander .container {
+  position: relative;
+}
+body #app-alarm #config #setup .calander .container .list {
+  position: absolute;
+  inset: 25%;
+  padding: 10px;
+  border: 1px solid #e7e7e7;
+}
+body #app-alarm #config #setup .calander .container .list .years div,
+body #app-alarm #config #setup .calander .container .list .months div {
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+}
+body #app-alarm #config #setup .calander .container .header {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+body #app-alarm #config #setup .calander .container .header .switch .toleft {
+  border: 1px solid #e7e7e7;
+  padding: 10px;
+  border-radius: 50%;
+  background: url("../angle-down-white.svg") center/10px no-repeat;
+  width: 20px;
+  height: 20px;
+  transform: rotate(90deg);
+}
+body #app-alarm #config #setup .calander .container .header .switch .year-month {
+  font-size: 16px;
+}
+body #app-alarm #config #setup .calander .container .header .switch .toright {
+  border: 1px solid #e7e7e7;
+  padding: 10px;
+  border-radius: 50%;
+  background: url("../angle-down-white.svg") center/10px no-repeat;
+  width: 20px;
+  height: 20px;
+  transform: rotate(90deg);
+}
+body #app-alarm #config #setup .calander .container .header .days-shorts-name {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+body #app-alarm #config #setup .calander .container .header .days-shorts-name .day-name-shorts {
+  font-size: 12px;
+  flex-basis: 16.6666666667%;
+  color: #e7e7e7;
+}
+body #app-alarm #config #setup .calander .container .header .days-shorts-name .day-name-shorts.selected {
+  color: #272727;
+}
+body #app-alarm #config #setup .calander .container .header .body {
+  display: flex;
+  justify-content: space-between;
+}
+body #app-alarm #config #setup .calander .container .header .body .days-n {
+  flex-basis: 16.6666666667%;
+}
+body #app-alarm #config #setup .calander .container .body {
+  display: flex;
+}
+body #app-alarm #config #setup .form {
+  margin: 10px 0;
+}
+body #app-alarm #config #setup .form .time {
+  display: flex;
+  justify-content: space-between;
+}
+body #app-alarm #config #setup .form .time input {
+  height: 70px;
+  width: 30px;
+  border: 1px solid blue;
+}
+body #app-alarm #config #setup .form .time span {
+  font-size: 25px;
+}
+body #app-alarm #config #setup .mood {
+  display: flex;
+  justify-content: space-between;
+}
+body #app-alarm #config #setup .mood .vic {
+  padding: 10px;
+  background-image: url("../mod.svg");
+}
+body #app-alarm #config #setup .mood .custom .ch_mod {
+  position: relative;
+}
+body #app-alarm #config #setup .mood .custom .ch_mod span {
+  background-color: #cecece;
+  width: 30px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: inset 1px 2px 3px 2px rgba(204, 206, 238, 0.231372549);
+}
+body #app-alarm #config #setup .mood .custom .ch_mod span::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+  background-color: blue;
+  animation: switch 1s 1;
+}
+body #app-alarm #config #setup .mood .custom .ch_mod span input#mod {
+  display: none;
+}
+body #app-alarm #config #setup .mood .custom .ch_mod span input#mod:checked + .ch_mod > span {
+  background-color: #db1212;
+}
+body #app-alarm #config #setup .mood .custom .ch_mod span input#mod:checked + .ch_mod > span::after {
+  content: "";
+  right: 2px;
+  background-color: rgb(255, 0, 106);
+}
+body #app-alarm #config #setup .days {
+  display: flex;
+  justify-content: space-between;
+}
+body #app-alarm #config #setup .days .custom-checkbox {
+  margin-right: 5px;
+}
+body #app-alarm #config #setup .days .custom-checkbox input[type=checkbox] {
+  display: none !important;
+}
+body #app-alarm #config #setup .days .custom-checkbox .checkbox {
+  color: blue;
+  background: #fff;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 50%;
+  border: 1px solid blue;
+  position: absolute;
+  top: 35px;
+}
+body #app-alarm #config #setup .days .custom-checkbox .inp-check:checked + .checkbox {
+  background-color: blue;
+  color: #fff;
+}
+body #app-alarm #config #setup .days .custom-checkbox .plus {
+  background-image: url("../repeate.svg");
+  width: 15px;
+  height: 15px;
+}
+body #app-alarm #config #setup .vic {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+}
+body #app-alarm #config #setup .repeate {
+  display: flex;
+}
+body #app-alarm #config #setup .repeate .vic {
+  background-image: url("../repeate.svg");
+}
+body #app-alarm #config #setup .repeate .plapceholder {
+  padding: 10px;
+  display: block;
+  height: 32px;
+  width: 120px;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+body #app-alarm #config #setup .repeate .plapceholder::before {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  content: "";
+  background: url("../angle-down-white.svg") center/10px no-repeat;
+  width: 10px;
+  height: 10px;
+  transform: rotate(180deg);
+  display: block;
+}
+body #app-alarm #config #setup .repeate .custom-select {
+  position: relative;
+  padding: 5px;
+  border: 1px solid #e7e7e7;
+  border-top: 0;
+  font-size: 13px;
+}
+body #app-alarm #config #setup .repeate .custom-select .option {
+  margin: 5px 0;
+}
+body #app-alarm #config #setup .soung {
+  display: flex;
+}
+body #app-alarm #config #setup .soung .vic {
+  background-image: url("../soung.svg");
+}
+body #app-alarm #config #setup .soung .upload {
+  width: 120px;
+  border: 1px dashed #e7e7e7;
+}
+body #app-alarm #config #setup .soung span {
+  margin: 0 10px;
+  font-size: 15px;
+}
+body #app-alarm #config #setup .soung input {
+  border-radius: 3px;
+  border: 1px solid #e7e7e7;
+}
+
+/*# sourceMappingURL=style.css.map */

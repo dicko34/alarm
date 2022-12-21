@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="app-alarm">
+        <div id="clock">10:04:05</div>
+        <p>Do ur tasks at the exact time</p>
+        <div id="config">
+            <div id="setup">
+                <div id="sure">
+                    <p>Are u sure to delete payeer alarm ?</p>
+                    <div class="buttons">
+                        <button class="no">No</button>
+                        <button class="yes">Yes</button>
+                    </div>
+                </div>
+                <div id="header">
+                    <div class="setting">
+                        <div class="vic"></div>
+                    </div>
+                    <div class="delete">
+                        <span>Delete</span>
+                    </div>
+                    <div class="name"><input type="text"></div>
+                    <div class="close">
+                        <div class="vic"></div>
+                    </div>
+                </div>
+                <div class="calandre">
+                    <div class="container">
+                        <div class="list">
+                            <div class="years">
+                                <div class="year">2022</div>
+                                <div class="year">2023</div>
+                                <div class="year">2024</div>
+                                <div class="year">2025</div>
+                                <div class="year">2026</div>
+                            </div>
+                            <div class="months">
+                                <div class="month">Jnuray</div>
+                                <div class="month">Febraury</div>
+                                <div class="month">March</div>
+                                <div class="month">April</div>
+                                <div class="month">May</div>
+                                <div class="month">June</div>
+                                <div class="month">jullay</div>
+                                <div class="month">Aguests</div>
+                                <div class="month">October</div>
+                                <div class="month">September</div>
+                                <div class="month">November</div>
+                                <div class="month">December</div>
+                            </div>
+                        </div>
+                        <div class="header">
+                            <div class="switch">
+                                <div class="toleft"></div>
+                                <div class="year-month">December 2022</div>
+                                <div class="toright"></div>
+                            </div>
+                            <div class="days-shorts-name">
+                                <div class="day-name-shorts">Su</div>
+                                <div class="day-name-shorts">Mo</div>
+                                <div class="day-name-shorts">Tu</div>
+                                <div class="day-name-shorts">We</div>
+                                <div class="day-name-shorts selected">Th</div>
+                                <div class="day-name-shorts">Fr</div>
+                                <div class="day-name-shorts">Sa</div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <span class="days-n">1</span><span class="days-n selcted">2</span><span class="days-n">3</span><span class="days-n">4</span><span class="days-n">5</span><span class="days-n">6</span><span class="days-n">7</span><span class="days-n">8</span><span class="days-n">9</span><span class="days-n">10</span><span class="days-n">11</span><span class="days-n">12</span><span class="days-n">13</span><span class="days-n">14</span><span class="days-n">15</span><span class="days-n">16</span><span class="days-n">17</span><span class="days-n">18</span><span class="days-n">19</span><span class="days-n">20</span><span class="days-n">21</span><span class="days-n">22</span><span class="days-n">23</span><span class="days-n">24</span><span class="days-n">25</span><span class="days-n">26</span><span class="days-n">27</span><span class="days-n">28</span><span class="days-n">29</span><span class="days-n">30</span><span class="days-n">31</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="time">
+                        <input type="text">
+                        <span class="sperator">:</span>
+                        <input type="text">
+                    </div>
+                    <div class="change_format">
+                        <button class="up">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="Isolation_Mode" data-name="Isolation Mode" viewBox="0 0 24 24" width="512" height="512"><path d="M0,8.057l9.52,9.507a3.507,3.507,0,0,0,4.948,0L24,8.046,21.879,5.929l-9.531,9.517a.5.5,0,0,1-.707,0L2.121,5.94Z"/></svg>
+                        </button>
+                        <div class="format">
+                            <span class="am">AM</span>
+                            <span class="pm">PM</span>
+                        </div>
+                        <button class="down"></button>
+                    </div>
+                </div>
+                <div class="mood">
+                    <div class="vic"></div>
+                    <div class="checkbox_mood">
+                        <div class="custom">
+                            <input type="checkbox" name="mood" id="mood">
+                            <label class="ch_mood" for="mood">
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="days">
+                    <div class="custom-checkbox"><input class="inp-check" type="checkbox" name="sunday" id="sunday"><label for="sunday" class="checkbox">S</label></div>
+                    <div class="custom-checkbox"><input class="inp-check" type="checkbox" name="monday" id="monday"><label for="monday" class="checkbox selected">M</label></div>
+                    <div class="custom-checkbox"><input class="inp-check" type="checkbox" name="thuesday" id="thuesday"><label for="thuesday" class="checkbox">T</label></div>
+                    <div class="custom-checkbox"><input class="inp-check" type="checkbox" name="wednsday" id="wednsday"><label for="wednsday" class="checkbox">W</label></div>
+                    <div class="custom-checkbox"><input class="inp-check" type="checkbox" name="thresday" id="thresday"><label for="thresday" class="checkbox">T</label></div>
+                    <div class="custom-checkbox"><input class="inp-check" type="checkbox" name="friday" id="friday"><label for="friday" class="checkbox">F</label></div>
+                    <div class="custom-checkbox"><input class="inp-check" type="checkbox" name="saturday" id="saturday"><label for="saturday" class="checkbox">S</label></div>
+                    <div class="custom-checkbox">
+                        <div class="plus"></div>
+                    </div>
+                </div>
+                <div class="repeate">
+                    <div class="vic"></div>
+                    <span class="plapceholder">5</span>
+                    <div class="custom_select">
+                        
+                        <div class="option">1</div>
+                        <div class="option">3</div>
+                        <div class="option">5</div>
+                        <div class="option">10</div>
+                        <div class="option">No</div>
+                    </div>
+                </div>
+                <div class="soung">
+                    <div class="vic"></div>
+                    <div class="upload"><input type="file" name="soung" id="upload_soung" placeholder="choose fille"></div>
+                    <span>or</span>
+                    <input type="text" value="www.url.ocm">
+                </div>
+                <div class="snoze_time"> 
+                    <div class="vic"></div>
+                    <div class="custom_select">
+                    <div class="option">1min</div>
+                    <div class="option">3min</div>
+                    <div class="option">5min</div>
+                    <div class="option">10min</div>
+                    <div class="option">No</div>
+                </div>
+                </div>
+                <div class="time_format">
+                    <div class="vic"></div>
+                    <div class="checkbox_time_format">
+                        <div class="custom">
+                            <input type="checkbox" name="time_format" id="time_format">
+                            <label class="ch_time_format" for="time_format">
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="discard">Discard</button>
+                    <button class="save">Save</button>
+                </div>
+            </div>
+            <div class="seted">
+                <div class="interface">
+                    <div class="name">Payeer</div>
+                    <div class="at"> <span class="time">05:35</span><span class="period">AM</span> </div>
+                    <div class="days"><span class="c_day">Sa</span><span class="c_day">Tu</span><span class="c_day">Mo</span><span class="c_day">Fr</span></div>
+                    <div class="repeate">
+                        <pan class="">5</pan>
+                    </div>
+                    <div class="snooze">
+                        <span>5 - min</span>
+                    </div>
+                    <div class="soung">
+                        <span>Allan walker - layli °</span>
+                    </div>
+                    <div class="left"">
+                    <span>15:12:00</span>
+                    </div>
+                </div>
+                <div class="interface">
+                    <div class="name">Buy lumbrgini</div>
+                    <div class="at"> <span class="time">08:35</span><span class="period">AM</span> </div>
+                    <div class="days">02.02.2023</div>
+                    <div class="repeate">
+                        <pan class="">5</pan>
+                    </div>
+                    <div class="snooze">
+                        <span>5 - min</span>
+                    </div>
+                    <div class="soung">
+                        <span>Let me down slowly</span>
+                    </div>
+                    <div class="left"">
+                    <span>3 days 15:12:00</span>
+                    </div>
+                </div>
+                <div class="interface">
+                    <div class="name">Travel to switzeland</div>
+                    <div class="at"> <span class="time">05:35</span><span class="period">AM</span> </div>
+                    <div class="days">31.12.2022</div>
+                    <div class="repeate">
+                        <pan class="">5</pan>
+                    </div>
+                    <div class="snooze">
+                        <span>5 - min</span>
+                    </div>
+                    <div class="soung">
+                        <span>Incahalah maher zain</span>
+                    </div>
+                    <div class="left"">
+                    <span>15:12:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="add">
+                <div class="ico">+</div>
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

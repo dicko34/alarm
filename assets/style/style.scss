@@ -1,0 +1,650 @@
+* {
+    box-sizing: border-box;
+}
+
+$primary :blue;
+$light : #e7e7e7;
+$source-svg : '../img/svg';
+
+@font-face {
+    font-family: 'Techno LCD';
+    src: url("fonts/Techno LCD.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    font-weight: bold;
+    src: url("fonts/TT-Norms-Fonts/TTNorms-Bold.otf");
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    font-weight: 400;
+    src: url("fonts/TT-Norms-Fonts/TTNorms-Light.otf");
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    font-weight: 500;
+    src: url("fonts/TT-Norms-Fonts/TTNorms-Regular.otf");
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    font-weight: 600;
+    src: url("fonts/TT-Norms-Fonts/TTNorms-Medium.otf");
+}
+
+body {
+    padding: 20px;
+    margin: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-family: 'TT Norms';
+    font-weight: 600;
+
+    input[type='checkbox'] {
+        display: none !important;
+    }
+
+    #app-alarm {
+        background-color: #fff;
+        position: relative;
+        z-index: 2;
+        width: 50%;
+
+        #clock {
+            font-family: 'Techno LCD';
+            text-align: center;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+        #config {
+            border-radius: 10px;
+            border: 1px solid #e6e6e6;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            #setup {
+                padding: 10px;
+                border-radius: 5px;
+                border: .1px solid $light;
+                position: relative;
+
+                #sure {
+                    width: 100%;
+                    padding: 20px;
+                    border: 1px solid #e7e7e7;
+
+                    p {
+                        font-size: 15px;
+                    }
+
+                    .buttons {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+
+                        button {
+                            cursor: pointer;
+                            width: 120px;
+                            height: 32px;
+                            border-radius: 3px;
+
+                            &.no {
+                                background-color: #cecece;
+                                color: #272727;
+                            }
+
+                            &.yes {
+                                background-color: #e24444;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                #header {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+
+                    .setting {
+                        .vic {
+                            padding: 10px;
+                            border: 1px solid #272727;
+                            border-radius: 3px;
+                            background-image: url("#{$source-svg}setting.svg");
+                        }
+                    }
+
+                    .delete {
+                        position: absolute;
+                        left: 10px;
+                        top: 20px;
+                        padding: 5px;
+                        background-color: #fff;
+
+                        span {
+                            font-size: 13px;
+
+                            &:hover {
+                                background-color: #e24444;
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    .name {
+                        input {
+                            height: 32px;
+                            border: 0;
+                            padding: 5px;
+
+                            &:focus {
+                                outline: 0;
+                                border-bottom: 1px solid blue;
+                                font-size: 17px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                    .close {
+                        .vic {
+                            padding: 10px;
+                            //background-image: url("#{$source-svg}close.svg") ;
+                            background: url("#{$source-svg}close.svg") center/20px;
+                        }
+                    }
+                }
+
+                .calander {
+                    position: absolute;
+                    width: 70%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    top: 30px;
+
+                    .container {
+                        position: relative;
+
+                        .list {
+                            position: absolute;
+                            inset: 25%;
+                            padding: 10px;
+                            border: 1px solid $light;
+
+                            .years,
+                            .months {
+                                div {
+                                    text-align: center;
+                                    padding: 5px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+
+                        .header {
+                            margin-bottom: 10px;
+                            display: flex;
+                            justify-content: space-between;
+                            width: 80%;
+
+                            .switch {
+                                .toleft {
+                                    cursor: pointer;
+                                    border: 1px solid #e7e7e7;
+                                    padding: 10px;
+                                    border-radius: 50%;
+                                    background: url('#{$source-svg}angle-down.svg') center/20px no-repeat;
+                                    width: 25px;
+                                    height: 25px;
+                                    transform: rotate(90deg);
+                                }
+
+                                .year-month {
+                                    font-size: 16px;
+                                }
+
+                                .toright {
+                                    cursor: pointer;
+                                    border: 1px solid #e7e7e7;
+                                    padding: 10px;
+                                    border-radius: 50%;
+                                    background: url('#{$source-svg}angle-down.svg') center/20px no-repeat;
+                                    width: 25px;
+                                    height: 25px;
+                                    transform: rotate(-90deg);
+                                }
+                            }
+
+                            .days-shorts-name {
+                                display: flex;
+                                justify-content: space-between;
+                                margin: 10px 0;
+
+                                .day-name-shorts {
+                                    font-size: 12px;
+                                    flex-basis: calc(100% / 8);
+                                    color: #e7e7e7;
+
+                                    &.selected {
+                                        color: #272727;
+                                    }
+                                }
+                            }
+
+                            .body {
+                                display: flex;
+                                justify-content: space-between;
+
+                                .days-n {
+                                    flex-basis: calc(100% / 8);
+                                }
+                            }
+                        }
+
+                        .body {
+                            display: flex;
+                        }
+                    }
+                }
+
+                .form {
+                    margin: 10px 0;
+                    height: 60px;
+                    display: flex;
+
+                    .time {
+                        display: flex;
+                        justify-content: space-between;
+
+                        input {
+                            height: 70px;
+                            width: 30px;
+                            border: 1px solid $primary;
+                            border-radius: 2px;
+                            margin: 5px;
+                        }
+
+                        span {
+                            font-size: 25px;
+                        }
+                    }
+
+                    .change_format {
+                        height: 60px;
+
+                        button {
+                            cursor: pointer;
+                            width: 20px;
+                            height: 20px;
+
+                            svg {
+                                fill: #272727;
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        .up {
+                            width: 20px;
+                            height: 20px;
+                            transform: rotate(180deg);
+                            transition: .5s all ease;
+
+                            &:focus {
+                                cursor: default;
+
+                                +.format>span {
+                                    bottom: 20px;
+
+                                    svg {
+                                        fill: #e7e7e7;
+                                    }
+                                }
+                            }
+                        }
+
+                        .format {
+                            overflow: hidden;
+                            box-shadow: inset 1px 1px 7px 0 #e1e1e1;
+                        }
+
+                        .down {
+                            cursor: pointer;
+                            background: url('#{$source-svg}angle-down.svg') center/15px no-repeat;
+                            width: 20px;
+                            height: 20px;
+
+                            &:focus {
+                                cursor: default;
+
+                                +.format>span {
+                                    bottom: 20px;
+
+                                    svg {
+                                        fill: #e7e7e7;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .vic {
+                    width: 35px;
+                    height: 35px;
+                    margin-right: 15px;
+                    background-position: center;
+                    background-size: 20px;
+                }
+
+                .mood {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .vic {
+                        background-image: url("#{$source-svg}settings-sliders.svg");
+                    }
+
+                    .checkbox_mood {
+                        .custom {
+                            .ch_mood {
+                                position: relative;
+
+                                span {
+                                    background-color: #cecece;
+                                    width: 30px;
+                                    height: 15px;
+                                    border-radius: 3px;
+                                    border: 1px solid #ccc;
+                                    box-shadow: inset 1px 2px 3px 2px #ccceee3b;
+
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        inset: 0;
+                                        width: 10px;
+                                        height: 10px;
+                                        background-color: blue;
+                                        border-radius: 50%;
+                                        transition: .5s ease all;
+                                    }
+
+
+                                }
+                            }
+
+                            input#mood {
+                                display: none;
+
+                                &:checked+.ch_mood {
+                                    span {
+                                        background-color: #db1212;
+
+                                        ::after {
+                                            content: "";
+                                            right: 2px;
+                                            background-color: rgb(255, 0, 106);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .days {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .custom-checkbox {
+                        margin-right: 5px;
+
+                        .checkbox {
+                            position: absolute;
+                            top: 35px;
+                            width: 20px;
+                            height: 20px;
+                            background: #fff;
+                            color: $primary;
+                            cursor: pointer;
+                            font-size: 16px;
+                            border-radius: 50%;
+                            border: 1px solid $primary;
+                        }
+
+                        .inp-check:checked+.checkbox {
+                            background-color: $primary;
+                            color: #fff;
+                        }
+
+                        .plus {
+                            background: url("#{$source-svg}plus.svg") center/20px;
+                            width: 15px;
+                            height: 15px;
+                        }
+
+                    }
+                }
+
+                .repeate {
+                    position: relative;
+                    display: flex;
+
+                    .vic {
+                        background-image: url("#{$source-svg}arrows-repeate.svg");
+                    }
+
+                    .plapceholder {
+                        display: block;
+                        height: 32px;
+                        width: 120px;
+                        padding: 10px;
+                        border: 1px solid $light;
+                        border-radius: 5px;
+                        font-size: 12px;
+                        text-align: center;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 15px;
+                            left: 15px;
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                            background: url('#{$source-svg}angle-down.svg') center/10px no-repeat;
+                            transform: rotate(180deg);
+
+                        }
+                    }
+                }
+
+                .custom-select {
+                    position: absolute;
+                    top: 35px;
+                    padding: 5px;
+                    border: 1px solid transparent;
+                    border-top: 0;
+                    font-size: 13px;
+                    transition: .5s all ease-in;
+
+                    .option {
+                        cursor: pointer;
+                        padding: 5px 10px;
+                        margin: 5px 0;
+
+                        &:hover {
+                            background-color: rgba(0, 0, 255, 0.322);
+                            border: 1px solid blue;
+                        }
+                    }
+                }
+
+                .soung {
+                    display: flex;
+
+                    .vic {
+                        background-image: url("#{$source-svg}music.svg");
+                    }
+
+                    .upload {
+                        width: 120px;
+                        height: 42px;
+                        padding: 10px;
+                        border: 1px dashed #e7e7e7;
+                    }
+
+                    span {
+                        margin: 0 10px;
+                        font-size: 15px;
+                    }
+
+                    input {
+                        border-radius: 3px;
+                        border: 1px solid #e7e7e7;
+                    }
+                }
+
+                .snoze_time {
+                    .vic {
+                        background: url("#{$source-svg}alaarm-snooze.svg");
+                    }
+                }
+
+                .time_format {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .vic {
+                        background-image: url("#{$source-svg}time-half.svg");
+                    }
+
+                    .checkbox_time_format {
+                        .custom {
+                            .ch_time_format {
+                                position: relative;
+
+                                span {
+                                    background-color: #cecece;
+                                    width: 30px;
+                                    height: 15px;
+                                    border-radius: 3px;
+                                    border: 1px solid #ccc;
+                                    box-shadow: inset 1px 2px 3px 2px #ccceee3b;
+
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        inset: 0;
+                                        width: 10px;
+                                        height: 10px;
+                                        background-color: blue;
+                                        border-radius: 50%;
+                                        transition: .5s ease all;
+                                    }
+
+
+                                }
+                            }
+
+                            input#time_format {
+                                display: none;
+
+                                &:checked+.ch_time_format {
+                                    span {
+                                        background-color: #db1212;
+
+                                        ::after {
+                                            content: "";
+                                            right: 2px;
+                                            background-color: rgb(255, 0, 106);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .buttons {
+                    button {
+                        cursor: pointer;
+                        width: 120px;
+                        height: 32px;
+                        padding: 10px;
+                        margin: 0 10px;
+                    }
+
+                    .discard {
+                        background-color: #cecece;
+                        color: #272727;
+                    }
+
+                    .save {
+                        background-color: $primary;
+                    }
+
+                }
+            }
+
+            .seted {
+                .interface {
+                    color: #fff;
+                    background: url('');
+                    .name {
+                        font-size: 21px;
+                        text-align: center;
+                        margin: 5px 0;
+                    }
+
+                    .at {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .time {
+                            font-family: 'Techno LCD';
+                            font-size: 18px;
+                        }
+
+                        .period {
+                            font-size: 18px;
+                        }
+                    }
+                    .days {
+                        display: flex;
+                        .c_day {
+                            margin: 0 10px  ;
+                        }
+                    }
+                    
+                }
+
+                .add {
+                    cursor: pointer;
+                    margin: 10px 0;
+                    .ico {
+                        width: 20px;
+                        height: 20px;
+                        background-image: url("#{$source-svg}plus.svg") center/20px;
+                    }
+                    &:hover {
+                        background-color: #ccc;
+                    }
+                }
+            }
+        }
+    }
+}
